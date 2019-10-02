@@ -150,7 +150,7 @@ export function generateStatusMessage(totalLength: number, completedLength: numb
   var progressString = generateProgress(progress);
   var speedStr = formatSize(speed);
   var eta = downloadETA(totalLength, completedLength, speed);
-  var message = `<i>${fileName}</i> - <code>${progressString}</code> of ${totalLengthStr} at ${speedStr}ps, ETA: ${eta}`;
+  var message = `Filename: <i>${fileName}</i> \n\nSize: ${totalLengthStr} \n\nProgress: <code>${progressString}</code> \n\nSpeed: ${speedStr}ps \n\nETA: ${eta}\n`;
   var status = {
     message: message,
     filename: fileName,
