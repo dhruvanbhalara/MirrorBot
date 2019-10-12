@@ -19,7 +19,7 @@ export class RegExps {
     this.getFolder = new RegExp(commands[5], 'i');
     this.cancelMirror = new RegExp(commands[6], 'i');
     this.cancelAll = new RegExp(commands[7], 'i');
-    this.ping = new RegExp(commands[8], 'i');
     this.disk = new RegExp(commands[8], 'i');
+    this.ping = new RegExp(commands[9], 'i');
   }
 }
