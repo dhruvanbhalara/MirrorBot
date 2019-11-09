@@ -9,7 +9,7 @@ import dlm = require('../dl_model/dl-manager');
 var dlManager = dlm.DlManager.getInstance();
 
 const PROGRESS_MAX_SIZE = Math.floor(100 / 8);
-const PROGRESS_INCOMPLETE = ['▏', '▎', '▍', '▌', '▋', '▊', '▉'];
+const PROGRESS_INCOMPLETE = ['●', '●', '●', '●', '●', '●', '●'];
 
 export function deleteDownloadedFile(subdirName: string): void {
   fs.remove(`${constants.ARIA_DOWNLOAD_LOCATION}/${subdirName}`)
@@ -166,11 +166,11 @@ function generateProgress(p: number): string {
   var str = '[';
   var cFull = Math.floor(p / 8);
   var cPart = p % 8 - 1;
-  str += '█'.repeat(cFull);
+  str += '●'.repeat(cFull);
   if (cPart >= 0) {
     str += PROGRESS_INCOMPLETE[cPart];
   }
-  str += ' '.repeat(PROGRESS_MAX_SIZE - cFull);
+  str += '○'.repeat(PROGRESS_MAX_SIZE - cFull);
   str = `${str}] ${p}%`;
 
   return str;
